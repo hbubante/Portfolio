@@ -1,8 +1,7 @@
 import Button from "@mui/material/Button"
 import './App.css';
 import '@fontsource-variable/inter';
-
-import { SiJavascript, SiTypescript, SiPython, SiCplusplus, SiC, SiDotnet, SiPostgresql } from "react-icons/si";
+import { SiJavascript, SiTypescript, SiPython, SiDotnet, SiPostgresql } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJava, FaReact } from "react-icons/fa";
 import Csharp from "./assets/csharp.png";
 import Cplusplus from "./assets/cplusplus.png";
