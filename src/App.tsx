@@ -43,6 +43,7 @@ function App() {
             bg-background
             font
         ">
+            {/* Navigation Bar */}
             <nav className="
                 fixed
                 top-0
@@ -94,6 +95,7 @@ function App() {
                 </p>
             </nav>
 
+            {/* Landing Content */}
             <div className="
                 flex
                 flex-col
@@ -134,6 +136,7 @@ function App() {
                 </Button>
             </div>
 
+            {/* About Section */}
             <div className="
                 flex
                 flex-row
@@ -288,6 +291,7 @@ function App() {
                 </div>
             </div>
 
+            {/* Projects Section */}
             <div className="
                 flex
                 flex-col
