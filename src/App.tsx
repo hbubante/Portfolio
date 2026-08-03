@@ -38,7 +38,7 @@ function App() {
             flex-col
             justify-start
             items-center
-            gap-[500px]
+            gap-[400px]
             px-[50px]
             pb-[200px]
             min-h-screen
@@ -98,14 +98,22 @@ function App() {
             </nav>
 
             {/* Landing Content */}
-            <div className="
-                flex
-                flex-col
-                items-left
-                gap-[50px]
-                mt-[300px]
-                w-full
-                max-w-[1280px]
+            <motion.div 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{
+                    duration: 0.75,
+                    ease: "easeOut",
+                }} 
+                className="
+                    flex
+                    flex-col
+                    items-left
+                    gap-[50px]
+                    mt-[200px]
+                    w-full
+                    max-w-[1280px]
             ">
                 <h1 className="
                     accent-accent
@@ -136,18 +144,26 @@ function App() {
                 }}>
                     Contact Me
                 </Button>
-            </div>
+            </motion.div>
 
             {/* About Section */}
-            <div className="
-                flex
-                flex-col
-                lg:flex-row
-                justify-between
-                items-stretch
-                gap-[50px]
-                w-full
-                max-w-[1280px]
+            <motion.div 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{
+                    duration: 0.75,
+                    ease: "easeOut",
+                }} 
+                className="
+                    flex
+                    flex-col
+                    lg:flex-row
+                    justify-between
+                    items-stretch
+                    gap-[50px]
+                    w-full
+                    max-w-[1280px]
             ">
                 <div className="
                     flex
@@ -295,15 +311,23 @@ function App() {
                         />
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Projects Section */}
-            <div className="
-                flex
-                flex-col
-                gap-[50px]
-                w-full
-                max-w-[1280px]
+            <motion.div 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{
+                    duration: 0.75,
+                    ease: "easeOut",
+                }} 
+                className="
+                    flex
+                    flex-col
+                    gap-[50px]
+                    w-full
+                    max-w-[1280px]
             ">
                 <h2 className="
                     accent-accent
@@ -665,18 +689,26 @@ function App() {
                     
                 </div>
                 
-            </div>
+            </motion.div>
 
             {/* Contact Section */}
-            <div className="
-                flex
-                flex-col
-                xl:flex-row
-                justify-between
-                items-stretch
-                gap-[50px]
-                w-full
-                max-w-[1280px]
+            <motion.div 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{
+                    duration: 0.75,
+                    ease: "easeOut",
+                }}
+                className="
+                    flex
+                    flex-col
+                    xl:flex-row
+                    justify-between
+                    items-stretch
+                    gap-[50px]
+                    w-full
+                    max-w-[1280px]
             ">
                 <div className="
                     flex
@@ -776,6 +808,7 @@ function App() {
 
                             "& .MuiOutlinedInput-root": {
                                 height: "50px",
+                                borderRadius: "12px",
 
                                 "& fieldset": {
                                     borderColor: "#DCBAB5",
@@ -828,6 +861,7 @@ function App() {
 
                             "& .MuiOutlinedInput-root": {
                                 height: "50px",
+                                borderRadius: "12px",
 
                                 "& fieldset": {
                                     borderColor: "#DCBAB5",
@@ -881,6 +915,8 @@ function App() {
                             },
 
                             "& .MuiOutlinedInput-root": {
+                                borderRadius: "12px",
+
                                 "& fieldset": {
                                     borderColor: "#DCBAB5",
                                     borderWidth: "2px",
@@ -934,7 +970,7 @@ function App() {
                         Submit
                     </Button>
                 </div>
-            </div>
+            </motion.div>
         </main>
     )
 }
