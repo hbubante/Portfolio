@@ -1,4 +1,5 @@
 import Button from "@mui/material/Button"
+import { TextField } from "@mui/material";
 import './App.css';
 import '@fontsource-variable/inter';
 import { motion } from "motion/react";
@@ -37,11 +38,15 @@ function App() {
             flex-col
             justify-start
             items-center
-            gap-[300px]
+            gap-[500px]
+            px-[25px]
             pb-[200px]
             min-h-screen
             bg-background
-            font
+
+            border-1
+            border-solid
+            border-yellow-500
         ">
             {/* Navigation Bar */}
             <nav className="
@@ -54,12 +59,12 @@ function App() {
                 items-center
                 gap-[50px]
                 w-full
-                px-[100px]
-                py-[50px]
+                px-[50px]
+                py-[25px]
                 bg-background
             ">
                 <p className="
-                    text-[32px]
+                    text-[24px]
                     font-[600]
                     surface-surface
                     cursor-pointer
@@ -71,7 +76,7 @@ function App() {
                 </p>
 
                 <p className="
-                    text-[32px]
+                    text-[24px]
                     font-[600]
                     surface-surface
                     cursor-pointer
@@ -83,7 +88,7 @@ function App() {
                 </p>
 
                 <p className="
-                    text-[32px]
+                    text-[24px]
                     font-[600]
                     surface-surface
                     cursor-pointer
@@ -101,7 +106,7 @@ function App() {
                 flex-col
                 items-left
                 gap-[50px]
-                mt-[200px]
+                mt-[300px]
                 w-full
                 max-w-[1280px]
             ">
@@ -113,7 +118,7 @@ function App() {
 
                 <p className="
                     max-w-[750px]
-                    text-[32px]
+                    text-[24px]
                     font-[400]
                     text-text
                 ">
@@ -121,14 +126,14 @@ function App() {
                 </p>
 
                 <Button sx={{
-                    width: 200,
-                    height: 65,
+                    width: 175,
+                    height: 50,
                     border: 2,
                     borderColor: "#DCBAB5",
                     borderRadius: 3,
                     color: "#DCBAB5",
                     fontFamily: "'Inter Variable', sans-serif",
-                    fontSize: 20,
+                    fontSize: 16,
                     fontWeight: 600,
                     textTransform: 'none'
                 }}>
@@ -159,7 +164,7 @@ function App() {
 
                     <p className="
                         max-w-[638px]
-                        text-[24px]
+                        text-[20px]
                         font-[400]
                         text-text
                     ">
@@ -172,14 +177,14 @@ function App() {
                         gap-[50px]
                     ">
                         <Button sx={{
-                            width: 200,
-                            height: 65,
+                            width: 175,
+                            height: 50,
                             border: 2,
                             borderColor: "#DCBAB5",
                             borderRadius: 3,
                             color: "#DCBAB5",
                             fontFamily: "'Inter Variable', sans-serif",
-                            fontSize: 20,
+                            fontSize: 16,
                             fontWeight: 600,
                             textTransform: 'none'
                         }}>
@@ -187,14 +192,14 @@ function App() {
                         </Button>
 
                         <Button sx={{
-                            width: 200,
-                            height: 65,
+                            width: 175,
+                            height: 50,
                             border: 2,
                             borderColor: "#DCBAB5",
                             borderRadius: 3,
                             color: "#DCBAB5",
                             fontFamily: "'Inter Variable', sans-serif",
-                            fontSize: 20,
+                            fontSize: 16,
                             fontWeight: 600,
                             textTransform: 'none'
                         }}>
@@ -217,27 +222,27 @@ function App() {
                         gap-[50px]
                     ">
                         <FaReact
-                        size={75}
+                        size={50}
                         className="surface-surface"
                         />
 
                         <FaHtml5
-                        size={85}
+                        size={60}
                         className="surface-surface"
                         />
 
                         <FaCss3Alt
-                        size={85}
+                        size={60}
                         className="surface-surface"
                         />
 
                         <SiJavascript
-                        size={75}
+                        size={50}
                         className="surface-surface"
                         />
 
                         <SiTypescript
-                        size={75}
+                        size={50}
                         className="surface-surface"
                         />
                     </div>
@@ -248,28 +253,28 @@ function App() {
                         gap-[50px]
                     ">
                         <SiPython
-                        size={75}
+                        size={50}
                         className="surface-surface"
                         />
 
                         <img 
                             src={Csharp}
-                            style={{ width: "75px", height: "75px" }} 
+                            style={{ width: "50px", height: "50px" }} 
                         />
 
                         <FaJava
-                        size={75}
+                        size={50}
                         className="surface-surface"
                         />
 
                         <img 
                             src={Cplusplus}
-                            style={{ width: "75px", height: "75px" }} 
+                            style={{ width: "50px", height: "50px" }} 
                         />
 
                         <img 
                             src={C}
-                            style={{ width: "75px", height: "75px" }} 
+                            style={{ width: "50px", height: "50px" }} 
                         />
                     </div>
 
@@ -279,12 +284,12 @@ function App() {
                         gap-[50px]
                     ">
                         <SiDotnet
-                        size={75}
+                        size={50}
                         className="surface-surface"
                         />
 
                         <SiPostgresql
-                        size={75}
+                        size={50}
                         className="surface-surface"
                         />
                     </div>
@@ -307,7 +312,8 @@ function App() {
 
                 <div className="
                     grid
-                    grid-cols-2
+                    grid-cols-1
+                    lg:grid-cols-2
                     gap-[50px]
                 ">
                     <motion.div
@@ -317,8 +323,8 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[600.89px]
-                            h-[338px]
+                            w-[550px]
+                            h-[300px]
                             rounded-[15px]
                             cursor-pointer
                     ">
@@ -362,15 +368,15 @@ function App() {
                                 z-10
                         ">
                             <p className="
-                                text-[24px]
+                                text-[20px]
                                 font-[600]
-                                surface-surface
+                                text-text
                             ">
                                 SteamStats
                             </p>
                             
                             <FaArrowRight
-                                size={30}
+                                size={25}
                                 className="surface-surface"
                             />
                         </motion.div>
@@ -383,8 +389,8 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[600.89px]
-                            h-[338px]
+                            w-[550px]
+                            h-[300px]
                             rounded-[15px]
                             cursor-pointer
                     ">
@@ -428,15 +434,15 @@ function App() {
                                 z-10
                         ">
                             <p className="
-                                text-[24px]
+                                text-[20px]
                                 font-[600]
-                                surface-surface
+                                text-text
                             ">
                                 BTr NPMS
                             </p>
                             
                             <FaArrowRight
-                                size={30}
+                                size={25}
                                 className="surface-surface"
                             />
                         </motion.div>
@@ -449,8 +455,8 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[600.89px]
-                            h-[338px]
+                            w-[550px]
+                            h-[300px]
                             rounded-[15px]
                             cursor-pointer
                     ">
@@ -494,15 +500,15 @@ function App() {
                                 z-10
                         ">
                             <p className="
-                                text-[24px]
+                                text-[20px]
                                 font-[600]
-                                surface-surface
+                                text-text
                             ">
                                 AppointMed
                             </p>
                             
                             <FaArrowRight
-                                size={30}
+                                size={25}
                                 className="surface-surface"
                             />
                         </motion.div>
@@ -515,8 +521,8 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[600.89px]
-                            h-[338px]
+                            w-[550px]
+                            h-[300px]
                             rounded-[15px]
                             cursor-pointer
                     ">
@@ -560,15 +566,15 @@ function App() {
                                 z-10
                         ">
                             <p className="
-                                text-[24px]
+                                text-[20px]
                                 font-[600]
-                                surface-surface
+                                text-text
                             ">
                                 AdKnow
                             </p>
                             
                             <FaArrowRight
-                                size={30}
+                                size={25}
                                 className="surface-surface"
                             />
                         </motion.div>
@@ -581,8 +587,8 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[600.89px]
-                            h-[338px]
+                            w-[550px]
+                            h-[300px]
                             rounded-[15px]
                             cursor-pointer
                     ">
@@ -626,15 +632,15 @@ function App() {
                                 z-10
                         ">
                             <p className="
-                                text-[24px]
+                                text-[20px]
                                 font-[600]
-                                surface-surface
+                                text-text
                             ">
                                 Project PASIL
                             </p>
                             
                             <FaArrowRight
-                                size={30}
+                                size={25}
                                 className="surface-surface"
                             />
                         </motion.div>
@@ -643,6 +649,265 @@ function App() {
                     
                 </div>
                 
+            </div>
+
+            {/* Contact Section */}
+            <div className="
+                flex
+                flex-row
+                justify-between
+                items-stretch
+                gap-[50px]
+                w-full
+                max-w-[1280px]
+            ">
+                <div className="
+                    flex
+                    flex-col
+                    gap-[50px]
+                    w-full
+                ">
+                    <h2 className="
+                        accent-accent
+                    ">
+                        contact me<span className="surface-surface">;</span>
+                    </h2>
+
+                    <p className="
+                        max-w-[638px]
+                        text-[20px]
+                        font-[400]
+                        text-text
+                    ">
+                        If you wish to reach out, you can fill out the form to send a message. Alternatively, you can also find me on the following platforms:
+                    </p>
+
+                    <div className="
+                        flex
+                        flex-row
+                        gap-[50px]
+                    ">
+                        <Button sx={{
+                            width: 175,
+                            height: 50,
+                            border: 2,
+                            borderColor: "#DCBAB5",
+                            borderRadius: 3,
+                            color: "#DCBAB5",
+                            fontFamily: "'Inter Variable', sans-serif",
+                            fontSize: 16,
+                            fontWeight: 600,
+                            textTransform: 'none'
+                        }}>
+                            LinkedIn
+                        </Button>
+
+                        <Button sx={{
+                            width: 175,
+                            height: 50,
+                            border: 2,
+                            borderColor: "#DCBAB5",
+                            borderRadius: 3,
+                            color: "#DCBAB5",
+                            fontFamily: "'Inter Variable', sans-serif",
+                            fontSize: 16,
+                            fontWeight: 600,
+                            textTransform: 'none'
+                        }}>
+                            GitHub
+                        </Button>
+                    </div>
+                </div>
+
+                <div className="
+                    flex
+                    flex-col
+                    justify-start
+                    items-center
+                    pt-[25px]
+                    gap-[20px]
+                    w-full
+                ">
+                    <TextField
+                        label="Name"
+                        variant="outlined"
+                        sx={{
+                            width: "400px",
+
+                            "& .MuiInputLabel-root": {
+                                color: "#DCBAB5",
+                                position: "relative",
+                                transform: "none",
+                                marginBottom: "10px",
+                                fontFamily: "'Inter Variable', sans-serif",
+                                fontSize: 16,
+                                fontWeight: 600,
+                            },
+
+                            "& .MuiInputLabel-root.Mui-focused": {
+                                color: "#DCBAB5",
+                            },
+
+                            "& .MuiOutlinedInput-root": {
+                                height: "50px",
+
+                                "& fieldset": {
+                                    borderColor: "#DCBAB5",
+                                    borderWidth: "2px",
+                                },
+
+                                "&:hover fieldset": {
+                                    borderColor: "#DCBAB5",
+                                },
+
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "#DCBAB5",
+                                },
+                            },
+
+                            "& input": {
+                                color: "#FFFFFF",
+                                padding: "0 16px",
+                            },
+
+                            "& legend": {
+                                display: 'none',
+                            },
+
+                            "& fieldset": {
+                                top: 0,
+                            },
+                        }}
+                    />
+
+                    <TextField
+                        label="Email"
+                        variant="outlined"
+                        sx={{
+                            width: "400px",
+
+                            "& .MuiInputLabel-root": {
+                                color: "#DCBAB5",
+                                position: "relative",
+                                transform: "none",
+                                marginBottom: "10px",
+                                fontFamily: "'Inter Variable', sans-serif",
+                                fontSize: 16,
+                                fontWeight: 600,
+                            },
+
+                            "& .MuiInputLabel-root.Mui-focused": {
+                                color: "#DCBAB5",
+                            },
+
+                            "& .MuiOutlinedInput-root": {
+                                height: "50px",
+
+                                "& fieldset": {
+                                    borderColor: "#DCBAB5",
+                                    borderWidth: "2px",
+                                },
+
+                                "&:hover fieldset": {
+                                    borderColor: "#DCBAB5",
+                                },
+
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "#DCBAB5",
+                                },
+                            },
+
+                            "& input": {
+                                color: "#FFFFFF",
+                                padding: "0 16px",
+                            },
+
+                            "& legend": {
+                                display: 'none',
+                            },
+
+                            "& fieldset": {
+                                top: 0,
+                            },
+                        }}
+                    />
+
+                    <TextField
+                        label="Message"
+                        variant="outlined"
+                        multiline
+                        rows={6}
+                        sx={{
+                            width: "400px",
+
+                            "& .MuiInputLabel-root": {
+                                color: "#DCBAB5",
+                                position: "relative",
+                                transform: "none",
+                                marginBottom: "10px",
+                                fontFamily: "'Inter Variable', sans-serif",
+                                fontSize: 16,
+                                fontWeight: 600,
+                            },
+
+                            "& .MuiInputLabel-root.Mui-focused": {
+                                color: "#DCBAB5",
+                            },
+
+                            "& .MuiOutlinedInput-root": {
+                                "& fieldset": {
+                                    borderColor: "#DCBAB5",
+                                    borderWidth: "2px",
+                                },
+
+                                "&:hover fieldset": {
+                                    borderColor: "#DCBAB5",
+                                },
+
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "#DCBAB5",
+                                    borderWidth: "2px",
+                                },
+                            },
+
+                            "& textarea": {
+                                color: "#FFFFFF",
+                            },
+
+                            "& legend": {
+                                display: 'none',
+                            },
+
+                            "& fieldset": {
+                                top: 0,
+                            },
+
+                            "& textarea::-webkit-scrollbar": {
+                                width: "6px",
+                            },
+
+                            "& textarea::-webkit-scrollbar-thumb": {
+                                backgroundColor: "#DCBAB5",
+                                borderRadius: "999px",
+                            },
+                        }}
+                    />
+
+                    <Button sx={{
+                        width: 175,
+                        height: 50,
+                        border: 2,
+                        borderColor: "#DCBAB5",
+                        borderRadius: 3,
+                        color: "#DCBAB5",
+                        fontFamily: "'Inter Variable', sans-serif",
+                        fontSize: 16,
+                        fontWeight: 600,
+                        textTransform: 'none'
+                    }}>
+                        Submit
+                    </Button>
+                </div>
             </div>
         </main>
     )
