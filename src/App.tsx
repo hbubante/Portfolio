@@ -43,10 +43,6 @@ function App() {
             pb-[200px]
             min-h-screen
             bg-background
-
-            border-1
-            border-solid
-            border-yellow-500
         ">
             {/* Navigation Bar */}
             <nav className="
@@ -144,7 +140,8 @@ function App() {
             {/* About Section */}
             <div className="
                 flex
-                flex-row
+                flex-col
+                lg:flex-row
                 justify-between
                 items-stretch
                 gap-[50px]
@@ -219,7 +216,8 @@ function App() {
                         flex
                         flex-row
                         items-center
-                        gap-[50px]
+                        gap-[25px]
+                        lg:gap-[50px]
                     ">
                         <FaReact
                         size={50}
@@ -250,7 +248,8 @@ function App() {
                     <div className="
                         flex
                         flex-row
-                        gap-[50px]
+                        gap-[25px]
+                        lg:gap-[50px]
                     ">
                         <SiPython
                         size={50}
@@ -281,7 +280,8 @@ function App() {
                     <div className="
                         flex
                         flex-row
-                        gap-[50px]
+                        gap-[25px]
+                        lg:gap-[50px]
                     ">
                         <SiDotnet
                         size={50}
@@ -323,7 +323,9 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[550px]
+                            w-[425px]
+                            md:w-[475px]
+                            xl:w-[550px]
                             h-[300px]
                             rounded-[15px]
                             cursor-pointer
@@ -389,7 +391,9 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[550px]
+                            w-[425px]
+                            md:w-[475px]
+                            xl:w-[550px]
                             h-[300px]
                             rounded-[15px]
                             cursor-pointer
@@ -455,7 +459,9 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[550px]
+                            w-[425px]
+                            md:w-[475px]
+                            xl:w-[550px]
                             h-[300px]
                             rounded-[15px]
                             cursor-pointer
@@ -521,7 +527,9 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[550px]
+                            w-[425px]
+                            md:w-[475px]
+                            xl:w-[550px]
                             h-[300px]
                             rounded-[15px]
                             cursor-pointer
@@ -587,7 +595,9 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[550px]
+                            w-[425px]
+                            md:w-[475px]
+                            xl:w-[550px]
                             h-[300px]
                             rounded-[15px]
                             cursor-pointer
@@ -654,7 +664,8 @@ function App() {
             {/* Contact Section */}
             <div className="
                 flex
-                flex-row
+                flex-col
+                xl:flex-row
                 justify-between
                 items-stretch
                 gap-[50px]
@@ -679,7 +690,7 @@ function App() {
                         font-[400]
                         text-text
                     ">
-                        If you wish to reach out, you can fill out the form to send a message. Alternatively, you can also find me on the following platforms:
+                        If you wish to reach out, you may fill out the form to send a message. Alternatively, you can also find me on the following platforms:
                     </p>
 
                     <div className="
@@ -728,6 +739,15 @@ function App() {
                     gap-[20px]
                     w-full
                 ">
+                    <p className="
+                        max-w-[638px]
+                        text-[24px]
+                        font-[600]
+                        accent-accent
+                    ">
+                        Send a Message
+                    </p>
+
                     <TextField
                         label="Name"
                         variant="outlined"
