@@ -39,7 +39,7 @@ function App() {
             justify-start
             items-center
             gap-[500px]
-            px-[25px]
+            px-[50px]
             pb-[200px]
             min-h-screen
             bg-background
@@ -51,7 +51,8 @@ function App() {
                 z-50
                 flex
                 flex-row
-                justify-end
+                justify-center
+                sm:justify-end
                 items-center
                 gap-[50px]
                 w-full
@@ -323,7 +324,8 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[425px]
+                            w-[375px]
+                            sm:w-[425px]
                             md:w-[475px]
                             xl:w-[550px]
                             h-[300px]
@@ -391,7 +393,8 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[425px]
+                            w-[375px]
+                            sm:w-[425px]
                             md:w-[475px]
                             xl:w-[550px]
                             h-[300px]
@@ -459,7 +462,8 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[425px]
+                            w-[375px]
+                            sm:w-[425px]
                             md:w-[475px]
                             xl:w-[550px]
                             h-[300px]
@@ -527,7 +531,8 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[425px]
+                            w-[375px]
+                            sm:w-[425px]
                             md:w-[475px]
                             xl:w-[550px]
                             h-[300px]
@@ -595,7 +600,8 @@ function App() {
                         className="
                             relative
                             overflow-hidden
-                            w-[425px]
+                            w-[375px]
+                            sm:w-[425px]
                             md:w-[475px]
                             xl:w-[550px]
                             h-[300px]
