@@ -22,14 +22,39 @@ const imageVariants = {
         },
     };
 
-    const contentVariants = {
-        rest: {
-            y: 0,
-        },
-        hover: {
-            y: -3,
-        },
-    };
+const contentVariants = {
+    rest: {
+        y: 0,
+    },
+    hover: {
+        y: -3,
+    },
+};
+
+const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+
+    if (!section)
+        return;
+
+    // Editable top margin when scrolling section into view; Adjust as needed when editing probably
+    const scrollMargin = 250;
+
+    const y = section.getBoundingClientRect().top + window.scrollY - scrollMargin;
+
+    window.scrollTo({
+        top: y,
+        behavior: "smooth",
+    });
+};
+
+const GITHUB_URL = "https://github.com/hbubante";
+const LINKEDIN_URL = "https://www.linkedin.com/in/hbubante/";
+const RESUME_URL = "/Ubante_Resume.pdf";
+
+const openExternal = (platform: string) => {
+    window.open(platform, "_blank", "noopener,noreferrer");
+};
 
 function App() {
     return (
@@ -60,39 +85,48 @@ function App() {
                 py-[25px]
                 bg-background
             ">
-                <p className="
-                    text-[24px]
-                    font-[600]
-                    surface-surface
-                    cursor-pointer
-                    transition-opacity
-                    duration-300
-                    hover:opacity-75
-                ">
+                <p
+                    className="
+                        text-[24px]
+                        font-[600]
+                        surface-surface
+                        cursor-pointer
+                        transition-opacity
+                        duration-300
+                        hover:opacity-75
+                    "
+                    onClick={() => scrollToSection("about")}
+                >
                     About
                 </p>
 
-                <p className="
-                    text-[24px]
-                    font-[600]
-                    surface-surface
-                    cursor-pointer
-                    transition-opacity
-                    duration-300
-                    hover:opacity-75
-                ">
+                <p
+                    className="
+                        text-[24px]
+                        font-[600]
+                        surface-surface
+                        cursor-pointer
+                        transition-opacity
+                        duration-300
+                        hover:opacity-75
+                    "
+                    onClick={() => scrollToSection("projects")}
+                >
                     Projects
                 </p>
 
-                <p className="
-                    text-[24px]
-                    font-[600]
-                    surface-surface
-                    cursor-pointer
-                    transition-opacity
-                    duration-300
-                    hover:opacity-75
-                ">
+                <p
+                    className="
+                        text-[24px]
+                        font-[600]
+                        surface-surface
+                        cursor-pointer
+                        transition-opacity
+                        duration-300
+                        hover:opacity-75
+                    "
+                    onClick={() => scrollToSection("contact")}
+                >
                     Contact
                 </p>
             </nav>
@@ -111,7 +145,7 @@ function App() {
                     flex-col
                     items-left
                     gap-[50px]
-                    mt-[200px]
+                    mt-[225px]
                     w-full
                     max-w-[1280px]
             ">
@@ -130,18 +164,21 @@ function App() {
                     I'm Hans, and i like turning ideas into software. I build web systems, explore new technologies, and enjoy the process of crafting solutions from conceptual ideas.
                 </p>
 
-                <Button sx={{
-                    width: 175,
-                    height: 50,
-                    border: 2,
-                    borderColor: "#DCBAB5",
-                    borderRadius: 3,
-                    color: "#DCBAB5",
-                    fontFamily: "'Inter Variable', sans-serif",
-                    fontSize: 16,
-                    fontWeight: 600,
-                    textTransform: 'none'
-                }}>
+                <Button
+                    sx={{
+                        width: 175,
+                        height: 50,
+                        border: 2,
+                        borderColor: "#DCBAB5",
+                        borderRadius: 3,
+                        color: "#DCBAB5",
+                        fontFamily: "'Inter Variable', sans-serif",
+                        fontSize: 16,
+                        fontWeight: 600,
+                        textTransform: 'none'
+                    }}
+                    onClick={() => scrollToSection("contact")}
+                >
                     Contact Me
                 </Button>
             </motion.div>
@@ -164,7 +201,9 @@ function App() {
                     gap-[50px]
                     w-full
                     max-w-[1280px]
-            ">
+                "
+                id="about"
+            >
                 <div className="
                     flex
                     flex-col
@@ -190,33 +229,39 @@ function App() {
                         flex-row
                         gap-[50px]
                     ">
-                        <Button sx={{
-                            width: 175,
-                            height: 50,
-                            border: 2,
-                            borderColor: "#DCBAB5",
-                            borderRadius: 3,
-                            color: "#DCBAB5",
-                            fontFamily: "'Inter Variable', sans-serif",
-                            fontSize: 16,
-                            fontWeight: 600,
-                            textTransform: 'none'
-                        }}>
+                        <Button
+                            sx={{
+                                width: 175,
+                                height: 50,
+                                border: 2,
+                                borderColor: "#DCBAB5",
+                                borderRadius: 3,
+                                color: "#DCBAB5",
+                                fontFamily: "'Inter Variable', sans-serif",
+                                fontSize: 16,
+                                fontWeight: 600,
+                                textTransform: 'none'
+                            }}
+                            onClick={() => openExternal(RESUME_URL)}
+                        >
                             View Resume
                         </Button>
 
-                        <Button sx={{
-                            width: 175,
-                            height: 50,
-                            border: 2,
-                            borderColor: "#DCBAB5",
-                            borderRadius: 3,
-                            color: "#DCBAB5",
-                            fontFamily: "'Inter Variable', sans-serif",
-                            fontSize: 16,
-                            fontWeight: 600,
-                            textTransform: 'none'
-                        }}>
+                        <Button
+                            sx={{
+                                width: 175,
+                                height: 50,
+                                border: 2,
+                                borderColor: "#DCBAB5",
+                                borderRadius: 3,
+                                color: "#DCBAB5",
+                                fontFamily: "'Inter Variable', sans-serif",
+                                fontSize: 16,
+                                fontWeight: 600,
+                                textTransform: 'none'
+                            }}
+                            onClick={() => openExternal(GITHUB_URL)}
+                        >
                             View GitHub
                         </Button>
                     </div>
@@ -328,7 +373,9 @@ function App() {
                     gap-[50px]
                     w-full
                     max-w-[1280px]
-            ">
+                "
+                id="projects"
+            >
                 <h2 className="
                     accent-accent
                 ">
@@ -709,7 +756,9 @@ function App() {
                     gap-[50px]
                     w-full
                     max-w-[1280px]
-            ">
+                "
+                id="contact"
+            >
                 <div className="
                     flex
                     flex-col
@@ -736,33 +785,39 @@ function App() {
                         flex-row
                         gap-[50px]
                     ">
-                        <Button sx={{
-                            width: 175,
-                            height: 50,
-                            border: 2,
-                            borderColor: "#DCBAB5",
-                            borderRadius: 3,
-                            color: "#DCBAB5",
-                            fontFamily: "'Inter Variable', sans-serif",
-                            fontSize: 16,
-                            fontWeight: 600,
-                            textTransform: 'none'
-                        }}>
+                        <Button
+                            sx={{
+                                width: 175,
+                                height: 50,
+                                border: 2,
+                                borderColor: "#DCBAB5",
+                                borderRadius: 3,
+                                color: "#DCBAB5",
+                                fontFamily: "'Inter Variable', sans-serif",
+                                fontSize: 16,
+                                fontWeight: 600,
+                                textTransform: 'none'
+                            }}
+                            onClick={() => openExternal(LINKEDIN_URL)}
+                        >
                             LinkedIn
                         </Button>
 
-                        <Button sx={{
-                            width: 175,
-                            height: 50,
-                            border: 2,
-                            borderColor: "#DCBAB5",
-                            borderRadius: 3,
-                            color: "#DCBAB5",
-                            fontFamily: "'Inter Variable', sans-serif",
-                            fontSize: 16,
-                            fontWeight: 600,
-                            textTransform: 'none'
-                        }}>
+                        <Button
+                            sx={{
+                                width: 175,
+                                height: 50,
+                                border: 2,
+                                borderColor: "#DCBAB5",
+                                borderRadius: 3,
+                                color: "#DCBAB5",
+                                fontFamily: "'Inter Variable', sans-serif",
+                                fontSize: 16,
+                                fontWeight: 600,
+                                textTransform: 'none'
+                            }}
+                            onClick={() => openExternal(GITHUB_URL)}
+                        >
                             GitHub
                         </Button>
                     </div>
