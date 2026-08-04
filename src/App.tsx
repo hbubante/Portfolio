@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import Button from "@mui/material/Button"
 import { TextField } from "@mui/material";
 import './App.css';
@@ -62,6 +64,22 @@ const openExternal = (platform: string) => {
 };
 
 function App() {
+    // Fix for refresh 40px scrolling issue
+    useEffect(() => {
+        if (!("scrollRestoration" in history)) return;
+
+        history.scrollRestoration = "manual";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "instant",
+        });
+
+        return () => {
+            history.scrollRestoration = "auto";
+        };
+    }, []);
+
     return (
         <main className="
             flex
