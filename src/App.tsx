@@ -9,7 +9,12 @@ import Csharp from "./assets/csharp.png";
 import Cplusplus from "./assets/cplusplus.png";
 import C from "./assets/c.png";
 
-import ppp from "./assets/project-preview-placeholder.png";
+// Image imports
+import previewSteamStats from "./assets/projects_preview/steamstats1.png";
+import previewBTrNPMS from "./assets/projects_preview/btrnpms1.png";
+import previewAppointMed from "./assets/projects_preview/appointmed1.png";
+import previewAdKnow from "./assets/projects_preview/adknow1.png";
+import previewProjectPASIL from "./assets/projects_preview/projectpasil1.png";
 
 const imageVariants = {
         rest: {
@@ -404,7 +409,7 @@ function App() {
                             cursor-pointer
                     ">
                         <motion.img 
-                            src={ppp}
+                            src={previewSteamStats}
                             variants={imageVariants}
                             transition={{
                                 duration: 0.3,
@@ -473,7 +478,7 @@ function App() {
                             cursor-pointer
                     ">
                         <motion.img 
-                            src={ppp}
+                            src={previewBTrNPMS}
                             variants={imageVariants}
                             transition={{
                                 duration: 0.3,
@@ -542,7 +547,7 @@ function App() {
                             cursor-pointer
                     ">
                         <motion.img 
-                            src={ppp}
+                            src={previewAppointMed}
                             variants={imageVariants}
                             transition={{
                                 duration: 0.3,
@@ -611,7 +616,7 @@ function App() {
                             cursor-pointer
                     ">
                         <motion.img 
-                            src={ppp}
+                            src={previewAdKnow}
                             variants={imageVariants}
                             transition={{
                                 duration: 0.3,
@@ -680,7 +685,7 @@ function App() {
                             cursor-pointer
                     ">
                         <motion.img 
-                            src={ppp}
+                            src={previewProjectPASIL}
                             variants={imageVariants}
                             transition={{
                                 duration: 0.3,
