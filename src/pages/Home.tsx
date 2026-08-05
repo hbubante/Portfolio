@@ -506,7 +506,9 @@ function Home() {
                             h-[300px]
                             rounded-[15px]
                             cursor-pointer
-                    ">
+                        "
+                        onClick={() => navigate("/projects/btrnpms")}
+                    >
                         <motion.img 
                             src={previewBTrNPMS}
                             variants={imageVariants}
@@ -575,7 +577,9 @@ function Home() {
                             h-[300px]
                             rounded-[15px]
                             cursor-pointer
-                    ">
+                        "
+                        onClick={() => navigate("/projects/appointmed")}
+                    >
                         <motion.img 
                             src={previewAppointMed}
                             variants={imageVariants}
@@ -644,7 +648,9 @@ function Home() {
                             h-[300px]
                             rounded-[15px]
                             cursor-pointer
-                    ">
+                        "
+                        onClick={() => navigate("/projects/adknow")}
+                    >
                         <motion.img 
                             src={previewAdKnow}
                             variants={imageVariants}
@@ -713,7 +719,9 @@ function Home() {
                             h-[300px]
                             rounded-[15px]
                             cursor-pointer
-                    ">
+                        "
+                        onClick={() => navigate("/projects/projectpasil")}
+                    >
                         <motion.img 
                             src={previewProjectPASIL}
                             variants={imageVariants}
@@ -767,10 +775,7 @@ function Home() {
                             />
                         </motion.div>
                     </motion.div>
-
-                    
                 </div>
-                
             </motion.div>
 
             {/* Contact Section */}
