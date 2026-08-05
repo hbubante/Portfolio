@@ -153,7 +153,8 @@ function SteamStats() {
                 {/* Middle Section */}
                 <div className="
                     flex
-                    flex-row
+                    flex-col
+                    xl:flex-row
                     justify-between
                     items-start
                     gap-[50px]
@@ -161,8 +162,9 @@ function SteamStats() {
                 ">
                     <div className="
                         w-full
-                        min-w-[899.78px]
+                        min-w-[450]
                         max-h-[505.69px]
+                        lg:min-w-[899.78px]
                         border-[2px]
                         border-solid
                         rounded-[15px]
