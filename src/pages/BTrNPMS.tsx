@@ -184,7 +184,8 @@ function BTrNPMS() {
                     <div className="
                         flex
                         flex-col
-                        gap-[20px]
+                        gap-[50px]
+                        xl:gap-[20px]
                         w-full
                     ">
                         <div className="
