@@ -863,7 +863,6 @@ function Home() {
                     flex-col
                     justify-start
                     items-center
-                    pt-[25px]
                     gap-[20px]
                     w-full
                 ">
