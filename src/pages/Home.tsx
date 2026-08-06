@@ -1,10 +1,12 @@
-import { useEffect} from "react";
+import { useEffect, useState } from "react";
 import Button from "@mui/material/Button"
-import { TextField } from "@mui/material";
+import { TextField, Alert, Fade } from "@mui/material";
 import '@fontsource-variable/inter';
 import { motion } from "motion/react";
 import { useNavigate, useLocation } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
+// Icon imports
 import { SiJavascript, SiTypescript, SiPython, SiDotnet, SiPostgresql } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJava, FaReact, FaArrowRight } from "react-icons/fa";
 import Csharp from "../assets/csharp.png";
@@ -18,6 +20,7 @@ import previewAppointMed from "../assets/projects_preview/appointmed1.png";
 import previewAdKnow from "../assets/projects_preview/adknow1.png";
 import previewProjectPASIL from "../assets/projects_preview/projectpasil1.png";
 
+// For Motion Variants
 const imageVariants = {
         rest: {
             scale: 1,
@@ -38,6 +41,7 @@ const contentVariants = {
     },
 };
 
+// For scrolling functionality
 const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
 
@@ -55,6 +59,7 @@ const scrollToSection = (id: string) => {
     });
 };
 
+// For redirecting functionality
 const GITHUB_URL = "https://github.com/hbubante";
 const LINKEDIN_URL = "https://www.linkedin.com/in/hbubante/";
 const RESUME_URL = "/Ubante_Resume.pdf";
@@ -62,6 +67,21 @@ const RESUME_URL = "/Ubante_Resume.pdf";
 const openExternal = (platform: string) => {
     window.open(platform, "_blank", "noopener,noreferrer");
 };
+
+// For EmailJS IDS/KEYS and other things
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+const currentTime = new Date().toLocaleString("en-PH", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZoneName: "short",
+});
 
 function Home() {
     // Fix for refresh 40px scrolling issue
@@ -89,6 +109,104 @@ function Home() {
 
         scrollToSection(location.hash.substring(1));
     }, [location]);
+
+    // For EmailJS and Contact Form functionalities
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
+
+    const [snackbar, setSnackbar] = useState({
+        open: false,
+        severity: "success" as "success" | "error",
+        message: "",
+    });
+
+    // States for Send Message button; Don't allow spamming of button
+    const [sending, setSending] = useState(false);
+
+    // For handling closing of snackbar
+    const handleSnackbarClose = () => {
+        setSnackbar((prev) => ({
+            ...prev,
+            open: false,
+        }));
+    };
+
+    // For automatically closing snackbar
+    useEffect(() => {
+        if (!snackbar.open) return;
+
+        const timer = setTimeout(() => {
+            setSnackbar((prev) => ({
+                ...prev,
+                open: false,
+            }));
+        }, 5000); // I.e. 5 seconds
+
+        return () => clearTimeout(timer);
+    }, [snackbar.open]);
+
+    // For handling sending of message from Contact Form
+    const sendMessage = async () => {
+        // Check first if all fields are filled in; All are required
+        if (!name || !email || !subject || !message)
+        {
+            setSnackbar({
+                open: true,
+                severity: "error",
+                message: "Please fill out all fields.",
+            });
+
+            return;
+        }
+
+        // Change state of the Send Message button
+        setSending(true);
+
+        // Do the stuff man
+        try {
+            await emailjs.send(
+                SERVICE_ID,
+                TEMPLATE_ID,
+                {
+                    from_name: name,
+                    reply_to: email,
+                    title: subject,
+                    time: currentTime,
+                    message: message,
+                },
+                {
+                    publicKey: PUBLIC_KEY,
+                }
+            );
+
+            setSnackbar({
+                open: true,
+                severity: "success",
+                message: "Message sent successfully.",
+            });
+
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
+        }
+        catch (error) {
+            console.error(error);
+
+            setSnackbar({
+                open: true,
+                severity: "error",
+                message: "Failed to send, please try again.",
+            });
+        }
+
+        // Revert back the state of the Send Message button
+        finally {
+            setSending(false);
+        }
+    };
 
     return (
         <main className="
@@ -208,7 +326,11 @@ function Home() {
                         fontFamily: "'Inter Variable', sans-serif",
                         fontSize: 16,
                         fontWeight: 600,
-                        textTransform: 'none'
+                        textTransform: 'none',
+
+                        "&:hover": {
+                            backgroundColor: "#DCBAB50D",
+                        },
                     }}
                     onClick={() => scrollToSection("contact")}
                 >
@@ -273,7 +395,11 @@ function Home() {
                                 fontFamily: "'Inter Variable', sans-serif",
                                 fontSize: 16,
                                 fontWeight: 600,
-                                textTransform: 'none'
+                                textTransform: 'none',
+
+                                "&:hover": {
+                                    backgroundColor: "#DCBAB50D",
+                                },
                             }}
                             onClick={() => openExternal(RESUME_URL)}
                         >
@@ -291,7 +417,11 @@ function Home() {
                                 fontFamily: "'Inter Variable', sans-serif",
                                 fontSize: 16,
                                 fontWeight: 600,
-                                textTransform: 'none'
+                                textTransform: 'none',
+
+                                "&:hover": {
+                                    backgroundColor: "#DCBAB50D",
+                                },
                             }}
                             onClick={() => openExternal(GITHUB_URL)}
                         >
@@ -836,7 +966,11 @@ function Home() {
                                 fontFamily: "'Inter Variable', sans-serif",
                                 fontSize: 16,
                                 fontWeight: 600,
-                                textTransform: 'none'
+                                textTransform: 'none',
+
+                                "&:hover": {
+                                    backgroundColor: "#DCBAB50D",
+                                },
                             }}
                             onClick={() => openExternal(LINKEDIN_URL)}
                         >
@@ -854,7 +988,11 @@ function Home() {
                                 fontFamily: "'Inter Variable', sans-serif",
                                 fontSize: 16,
                                 fontWeight: 600,
-                                textTransform: 'none'
+                                textTransform: 'none',
+
+                                "&:hover": {
+                                    backgroundColor: "#DCBAB50D",
+                                },
                             }}
                             onClick={() => openExternal(GITHUB_URL)}
                         >
@@ -931,6 +1069,8 @@ function Home() {
                                 top: 0,
                             },
                         }}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                     />
 
                     <TextField
@@ -984,6 +1124,63 @@ function Home() {
                                 top: 0,
                             },
                         }}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+
+                    <TextField
+                        label="Subject"
+                        variant="outlined"
+                        sx={{
+                            width: "400px",
+
+                            "& .MuiInputLabel-root": {
+                                color: "#DCBAB5",
+                                position: "relative",
+                                transform: "none",
+                                marginBottom: "10px",
+                                fontFamily: "'Inter Variable', sans-serif",
+                                fontSize: 16,
+                                fontWeight: 600,
+                            },
+
+                            "& .MuiInputLabel-root.Mui-focused": {
+                                color: "#DCBAB5",
+                            },
+
+                            "& .MuiOutlinedInput-root": {
+                                height: "50px",
+                                borderRadius: "12px",
+
+                                "& fieldset": {
+                                    borderColor: "#DCBAB5",
+                                    borderWidth: "2px",
+                                },
+
+                                "&:hover fieldset": {
+                                    borderColor: "#DCBAB5",
+                                },
+
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "#DCBAB5",
+                                },
+                            },
+
+                            "& input": {
+                                color: "#FFFFFF",
+                                padding: "0 16px",
+                            },
+
+                            "& legend": {
+                                display: 'none',
+                            },
+
+                            "& fieldset": {
+                                top: 0,
+                            },
+                        }}
+                        value={subject}
+                        onChange={(e) => setSubject(e.target.value)}
                     />
 
                     <TextField
@@ -1047,22 +1244,53 @@ function Home() {
                                 borderRadius: "999px",
                             },
                         }}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                     />
 
-                    <Button sx={{
-                        width: 175,
-                        height: 50,
-                        border: 2,
-                        borderColor: "#DCBAB5",
-                        borderRadius: 3,
-                        color: "#DCBAB5",
-                        fontFamily: "'Inter Variable', sans-serif",
-                        fontSize: 16,
-                        fontWeight: 600,
-                        textTransform: 'none'
-                    }}>
-                        Submit
+                    <Button 
+                        sx={{
+                            width: 175,
+                            height: 50,
+                            border: 2,
+                            borderColor: "#DCBAB5",
+                            borderRadius: 3,
+                            color: "#DCBAB5",
+                            fontFamily: "'Inter Variable', sans-serif",
+                            fontSize: 16,
+                            fontWeight: 600,
+                            textTransform: 'none',
+
+                            "&:hover": {
+                                backgroundColor: "#DCBAB50D",
+                            },
+
+                            "&.Mui-disabled": {
+                                backgroundColor: "#DCBAB5",
+                                color: "#FFFFFF",
+                                fontFamily: "'Inter Variable', sans-serif",
+                            },
+                        }}
+                        disabled={sending}
+                        onClick={sendMessage}
+                    >
+                        {sending? "Sending..." : "Send Message"}
                     </Button>
+
+                    <Fade in={snackbar.open}>
+                        <Alert
+                            onClose={handleSnackbarClose}
+                            severity={snackbar.severity}
+                            variant="filled"
+                            sx={{
+                                borderRadius: "10px",
+                                color: "FFFFFF",
+                                backgroundColor: "#DCBAB5",
+                            }}
+                        >
+                            {snackbar.message}
+                        </Alert>
+                    </Fade>
                 </div>
             </motion.div>
         </main>
