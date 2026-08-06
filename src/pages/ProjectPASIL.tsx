@@ -4,8 +4,9 @@ import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import ProjectPreviewGallery from "../components/ProjectPreviewGallery";
 
-import { SiTypescript, SiDotnet, SiPostgresql, SiSupabase} from "react-icons/si";
-import { FaChevronLeft, FaReact } from "react-icons/fa";
+// Icon imports
+import { SiPython, SiPytorch, SiUnity } from "react-icons/si";
+import { FaChevronLeft} from "react-icons/fa";
 import Csharp from "../assets/csharp.png";
 
 // Image imports
@@ -230,7 +231,7 @@ function ProjectPASIL() {
                                 font-[400]
                                 text-text
                             ">
-                                AI/Reinforcement Learning  Developer
+                                AI/RL  Developer
                             </p>
                         </div>
 
@@ -253,12 +254,12 @@ function ProjectPASIL() {
                                 grid-cols-3
                                 gap-[50px]
                             ">
-                                <FaReact
+                                <SiPython
                                 size={50}
                                 className="surface-surface"
                                 />
 
-                                <SiTypescript
+                                <SiPytorch
                                 size={50}
                                 className="surface-surface"
                                 />
@@ -268,17 +269,7 @@ function ProjectPASIL() {
                                     style={{ width: "50px", height: "50px" }} 
                                 />
 
-                                <SiDotnet
-                                size={50}
-                                className="surface-surface"
-                                />
-
-                                <SiPostgresql
-                                size={50}
-                                className="surface-surface"
-                                />
-
-                                <SiSupabase
+                                <SiUnity
                                 size={50}
                                 className="surface-surface"
                                 />
@@ -315,7 +306,7 @@ function ProjectPASIL() {
                             font-[400]
                             text-text
                         ">
-                            SteamStats is an analytics platform for Steam accounts designed to present different statistical points based on the user's activity.
+                            Project PASIL is a game-based learning platform designed to help grade school students practice and improve on the Order of Operations in Mathematics by adapting to each learner's knowledge level, facilitated through the game design and implementation of artificial intelligence for the difficulty adjustment process.  
                         </p>
                     </div>
 
@@ -341,11 +332,10 @@ function ProjectPASIL() {
                             list-inside
                             pl-3
                         ">
-                            <li>Designed and implemented front-end interface using <span className="surface-surface">React</span>.</li>
-                            <li>Developed the back-end using <span className="surface-surface">ASP.NET Core</span>.</li>
-                            <li>Designed and implemented <span className="surface-surface">RESTful API Endpoints</span> for front-end to back-end communication.</li>
-                            <li>Utilized <span className="surface-surface">PostgreSQL</span> through <span className="surface-surface">Supabase</span> for data management.</li>
-                            <li>Integrated <span className="surface-surface">Steam Web API</span> to retrieve user account and game library data.</li>
+                            <li>Implemented the Reinforcement Learning Agents using the <span className="surface-surface">Proximal Policy Optimization</span> algorithm through <span className="surface-surface">Stable Baselines3 and PyTorch</span>.</li>
+                            <li>Developed the training architecture, including the simulation environment, observation/action spaces for each agent, and reward designs, using <span className="surface-surface">Python</span>.</li>
+                            <li>Developed the inference architecture, including the RL Agent-to-Unity integration and data flow management, using <span className="surface-surface">Python, C#, and Unity</span>.</li>
+                            <li>Designed and implemented a grammar-based procedural math problem generator for both the training and inference processes.</li>
                         </ul>
                     </div>
 
@@ -371,11 +361,11 @@ function ProjectPASIL() {
                             list-inside
                             pl-3
                         ">
-                            <li><span className="surface-surface">Recently Played Games</span> summary presenting recent gameplay activity in the past two weeks in descending order based on total playtime.</li>
-                            <li><span className="surface-surface">Most Played Games</span> summary showing the top 10 games in descending order based on total playtime.</li>
-                            <li><span className="surface-surface">Personal Statistics</span> summary presenting general account analytics.</li>
-                            <li><span className="surface-surface">User Data Refresh</span> functionality for re-fetching data from Steam.</li>
-                            <li><span className="surface-surface">View Steam Profile</span> functionality for redirecting to the user's Steam profile.</li>
+                            <li><span className="surface-surface">Performance-Based Personalization</span> through the Difficulty Adjustment Agent (DAA) and Material Retrieval Agent (MRA), both taking in performance metrics as inputs.</li>
+                            <li><span className="surface-surface">Dynamic Difficulty Adjustment</span> through the DAA, deciding how to adjust the next problem.</li>
+                            <li><span className="surface-surface">Procedural Problem Generator</span> for generating the next problem based on the DAA decisions.</li>
+                            <li><span className="surface-surface">Adaptive Material Retrieval</span> through the MRA, deciding if supplementary materials should be given to the learner.</li>
+                            <li><span className="surface-surface">Material Manager</span> for selecting learning materials based on the identified struggle points during gameplay and to be presented to the learner.</li>
                         </ul>
                     </div>
                 </div>

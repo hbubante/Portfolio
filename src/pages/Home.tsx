@@ -12,8 +12,8 @@ import Cplusplus from "../assets/cplusplus.png";
 import C from "../assets/c.png";
 
 // Image imports
-import previewSteamStats from "../assets/projects_preview/steamstats1.png";
 import previewBTrNPMS from "../assets/projects_preview/btrnpms1.png";
+import previewSteamStats from "../assets/projects_preview/steamstats1.png";
 import previewAppointMed from "../assets/projects_preview/appointmed1.png";
 import previewAdKnow from "../assets/projects_preview/adknow1.png";
 import previewProjectPASIL from "../assets/projects_preview/projectpasil1.png";
@@ -254,7 +254,7 @@ function Home() {
                         font-[400]
                         text-text
                     ">
-                        I am a Computer Science graduate focusing on full-stack development and currently specializing in React and .NET, among other technologies. I have hands-on experience with systems development through internship, academic, and practical projects.
+                        I am a Computer Science graduate focusing on full-stack development and currently specializing in React and .NET, among other technologies. I have hands-on experience with systems development through internship, academic, and technical projects.
                     </p>
 
                     <div className="
@@ -436,77 +436,6 @@ function Home() {
                             rounded-[15px]
                             cursor-pointer
                         "
-                        onClick={() => navigate("/projects/steamstats")}
-                    >
-                        <motion.img 
-                            src={previewSteamStats}
-                            variants={imageVariants}
-                            transition={{
-                                duration: 0.3,
-                                ease: "easeOut",
-                            }}
-                            className="
-                                absolute
-                                inset-0
-                                h-full
-                                w-full
-                                object-cover
-                        "/>
-
-                        <div className="
-                            absolute
-                            -inset-1
-                            rounded-xl
-                            bg-gradient-to-b
-                            from-transparent
-                            to-black
-                            opacity-75
-                        ">
-                        </div>
-
-                        <motion.div 
-                            variants={contentVariants}
-                            className="
-                                flex
-                                flex-row
-                                justify-between
-                                items-center
-                                absolute
-                                bottom-[50px]
-                                left-[50px]
-                                right-[50px]
-                                z-10
-                        ">
-                            <p className="
-                                text-[20px]
-                                font-[600]
-                                text-text
-                            ">
-                                SteamStats
-                            </p>
-                            
-                            <FaArrowRight
-                                size={25}
-                                className="surface-surface"
-                            />
-                        </motion.div>
-                    </motion.div>
-
-                    <motion.div
-                        initial="rest"
-                        whileHover="hover"
-                        animate="rest"
-                        className="
-                            relative
-                            overflow-hidden
-                            w-[375px]
-                            sm:w-[425px]
-                            md:w-[475px]
-                            xl:w-[550px]
-                            h-[300px]
-                            rounded-[15px]
-                            cursor-pointer
-                        "
                         onClick={() => navigate("/projects/btrnpms")}
                     >
                         <motion.img 
@@ -554,6 +483,77 @@ function Home() {
                                 text-text
                             ">
                                 BTr NPMS
+                            </p>
+                            
+                            <FaArrowRight
+                                size={25}
+                                className="surface-surface"
+                            />
+                        </motion.div>
+                    </motion.div>
+
+                    <motion.div
+                        initial="rest"
+                        whileHover="hover"
+                        animate="rest"
+                        className="
+                            relative
+                            overflow-hidden
+                            w-[375px]
+                            sm:w-[425px]
+                            md:w-[475px]
+                            xl:w-[550px]
+                            h-[300px]
+                            rounded-[15px]
+                            cursor-pointer
+                        "
+                        onClick={() => navigate("/projects/steamstats")}
+                    >
+                        <motion.img 
+                            src={previewSteamStats}
+                            variants={imageVariants}
+                            transition={{
+                                duration: 0.3,
+                                ease: "easeOut",
+                            }}
+                            className="
+                                absolute
+                                inset-0
+                                h-full
+                                w-full
+                                object-cover
+                        "/>
+
+                        <div className="
+                            absolute
+                            -inset-1
+                            rounded-xl
+                            bg-gradient-to-b
+                            from-transparent
+                            to-black
+                            opacity-75
+                        ">
+                        </div>
+
+                        <motion.div 
+                            variants={contentVariants}
+                            className="
+                                flex
+                                flex-row
+                                justify-between
+                                items-center
+                                absolute
+                                bottom-[50px]
+                                left-[50px]
+                                right-[50px]
+                                z-10
+                        ">
+                            <p className="
+                                text-[20px]
+                                font-[600]
+                                text-text
+                            ">
+                                SteamStats
                             </p>
                             
                             <FaArrowRight

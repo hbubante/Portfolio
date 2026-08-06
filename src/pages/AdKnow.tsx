@@ -4,9 +4,9 @@ import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import ProjectPreviewGallery from "../components/ProjectPreviewGallery";
 
-import { SiTypescript, SiDotnet, SiPostgresql, SiSupabase} from "react-icons/si";
-import { FaChevronLeft, FaReact } from "react-icons/fa";
-import Csharp from "../assets/csharp.png";
+// Icon imports
+import { SiJavascript } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaChevronLeft, FaFigma } from "react-icons/fa";
 
 // Image imports
 import previewAdKnow1 from "../assets/projects_preview/adknow1.png";
@@ -228,7 +228,7 @@ function AdKnow() {
                                 font-[400]
                                 text-text
                             ">
-                                Front-end Designer and Developer
+                                Front-end Developer and Designer
                             </p>
                         </div>
 
@@ -251,32 +251,22 @@ function AdKnow() {
                                 grid-cols-3
                                 gap-[50px]
                             ">
-                                <FaReact
+                                <FaHtml5
                                 size={50}
                                 className="surface-surface"
                                 />
 
-                                <SiTypescript
+                                <FaCss3Alt
                                 size={50}
                                 className="surface-surface"
                                 />
 
-                                <img 
-                                    src={Csharp}
-                                    style={{ width: "50px", height: "50px" }} 
-                                />
-
-                                <SiDotnet
+                                <SiJavascript
                                 size={50}
                                 className="surface-surface"
                                 />
 
-                                <SiPostgresql
-                                size={50}
-                                className="surface-surface"
-                                />
-
-                                <SiSupabase
+                                <FaFigma
                                 size={50}
                                 className="surface-surface"
                                 />
@@ -313,7 +303,7 @@ function AdKnow() {
                             font-[400]
                             text-text
                         ">
-                            SteamStats is an analytics platform for Steam accounts designed to present different statistical points based on the user's activity.
+                            AdKnow is a school chatbot platform designed to assist students in navigating through technical processes and procedures within the university and in offering general school-related information. 
                         </p>
                     </div>
 
@@ -339,11 +329,8 @@ function AdKnow() {
                             list-inside
                             pl-3
                         ">
-                            <li>Designed and implemented front-end interface using <span className="surface-surface">React</span>.</li>
-                            <li>Developed the back-end using <span className="surface-surface">ASP.NET Core</span>.</li>
-                            <li>Designed and implemented <span className="surface-surface">RESTful API Endpoints</span> for front-end to back-end communication.</li>
-                            <li>Utilized <span className="surface-surface">PostgreSQL</span> through <span className="surface-surface">Supabase</span> for data management.</li>
-                            <li>Integrated <span className="surface-surface">Steam Web API</span> to retrieve user account and game library data.</li>
+                            <li>Designed the front-end interface using <span className="surface-surface">Figma</span>.</li>
+                            <li>Implemented the front-end interface and logic using <span className="surface-surface">HTML, CSS, and JavaScript</span>.</li>
                         </ul>
                     </div>
 
@@ -369,11 +356,9 @@ function AdKnow() {
                             list-inside
                             pl-3
                         ">
-                            <li><span className="surface-surface">Recently Played Games</span> summary presenting recent gameplay activity in the past two weeks in descending order based on total playtime.</li>
-                            <li><span className="surface-surface">Most Played Games</span> summary showing the top 10 games in descending order based on total playtime.</li>
-                            <li><span className="surface-surface">Personal Statistics</span> summary presenting general account analytics.</li>
-                            <li><span className="surface-surface">User Data Refresh</span> functionality for re-fetching data from Steam.</li>
-                            <li><span className="surface-surface">View Steam Profile</span> functionality for redirecting to the user's Steam profile.</li>
+                            <li><span className="surface-surface">User Authentication Interface</span> for both registering and signing in accounts.</li>
+                            <li><span className="surface-surface">Message Recommendations</span> in the home page for suggesting commonly asked questions based on their category.</li>
+                            <li><span className="surface-surface">Responsive Messaging Interface</span> for dynamically displaying messages within conversations.</li>
                         </ul>
                     </div>
                 </div>

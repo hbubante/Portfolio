@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import ProjectPreviewGallery from "../components/ProjectPreviewGallery";
 
+// Icon imports
 import { SiTypescript, SiDotnet, SiPostgresql, SiSupabase} from "react-icons/si";
 import { FaChevronLeft, FaReact } from "react-icons/fa";
 import Csharp from "../assets/csharp.png";
@@ -205,7 +206,7 @@ function SteamStats() {
                                 font-[400]
                                 text-text
                             ">
-                                Personal Project
+                                Technical Project
                             </p>
                         </div>
 
@@ -228,7 +229,7 @@ function SteamStats() {
                                 font-[400]
                                 text-text
                             ">
-                                Full-stack Developer
+                                Full-Stack Developer
                             </p>
                         </div>
 
@@ -313,7 +314,7 @@ function SteamStats() {
                             font-[400]
                             text-text
                         ">
-                            SteamStats is an analytics platform for Steam accounts designed to present different statistical points based on the user's activity.
+                            SteamStats is an analytics platform for Steam accounts designed to present different statistical information based on the user's account and gameplay activity.
                         </p>
                     </div>
 
@@ -339,9 +340,9 @@ function SteamStats() {
                             list-inside
                             pl-3
                         ">
-                            <li>Designed and implemented front-end interface using <span className="surface-surface">React</span>.</li>
+                            <li>Designed and implemented the front-end interface using <span className="surface-surface">React</span>.</li>
                             <li>Developed the back-end using <span className="surface-surface">ASP.NET Core</span>.</li>
-                            <li>Designed and implemented <span className="surface-surface">RESTful API Endpoints</span> for front-end to back-end communication.</li>
+                            <li>Designed and implemented <span className="surface-surface">RESTful API Endpoints</span> for front-end/back-end communication.</li>
                             <li>Utilized <span className="surface-surface">PostgreSQL</span> through <span className="surface-surface">Supabase</span> for data management.</li>
                             <li>Integrated <span className="surface-surface">Steam Web API</span> to retrieve user account and game library data.</li>
                         </ul>

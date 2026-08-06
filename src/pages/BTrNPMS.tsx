@@ -4,9 +4,11 @@ import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import ProjectPreviewGallery from "../components/ProjectPreviewGallery";
 
-import { SiTypescript, SiDotnet, SiPostgresql, SiSupabase} from "react-icons/si";
-import { FaChevronLeft, FaReact } from "react-icons/fa";
-import Csharp from "../assets/csharp.png";
+// Icon imports
+import { FaChevronLeft } from "react-icons/fa";
+import PowerApps from "../assets/powerapps.png";
+import Dataverse from "../assets/dataverse.png";
+import SharePoint from "../assets/sharepoint.png";
 
 // Image imports
 import previewBTrNPMS1 from "../assets/projects_preview/btrnpms1.png";
@@ -207,7 +209,30 @@ function BTrNPMS() {
                                 font-[400]
                                 text-text
                             ">
-                                Internship Project (BTr Camarines Sur)
+                                Internship Project
+                            </p>
+                        </div>
+
+                        <div className="
+                            flex
+                            flex-col
+                            gap-[10px]
+                            w-full
+                        ">
+                            <p className="
+                                text-[24px]
+                                font-[600]
+                                accent-accent
+                            ">
+                                Company
+                            </p>
+
+                            <p className="
+                                text-[20px]
+                                font-[400]
+                                text-text
+                            ">
+                                Bureau of the Treasury Camarines Sur
                             </p>
                         </div>
 
@@ -230,7 +255,7 @@ function BTrNPMS() {
                                 font-[400]
                                 text-text
                             ">
-                                Full-stack Developer
+                                Software Development Intern
                             </p>
                         </div>
 
@@ -253,34 +278,19 @@ function BTrNPMS() {
                                 grid-cols-3
                                 gap-[50px]
                             ">
-                                <FaReact
-                                size={50}
-                                className="surface-surface"
-                                />
-
-                                <SiTypescript
-                                size={50}
-                                className="surface-surface"
-                                />
-
                                 <img 
-                                    src={Csharp}
+                                    src={PowerApps}
                                     style={{ width: "50px", height: "50px" }} 
                                 />
 
-                                <SiDotnet
-                                size={50}
-                                className="surface-surface"
+                                <img 
+                                    src={Dataverse}
+                                    style={{ width: "50px", height: "50px" }} 
                                 />
 
-                                <SiPostgresql
-                                size={50}
-                                className="surface-surface"
-                                />
-
-                                <SiSupabase
-                                size={50}
-                                className="surface-surface"
+                                <img 
+                                    src={SharePoint}
+                                    style={{ width: "50px", height: "50px" }} 
                                 />
                             </div>
                         </div>
@@ -315,7 +325,7 @@ function BTrNPMS() {
                             font-[400]
                             text-text
                         ">
-                            SteamStats is an analytics platform for Steam accounts designed to present different statistical points based on the user's activity.
+                            The Non-Procurements Management System (NPMS) was designed to streamline the management of non-procurement transactions for the Bureau of the Treasury Camarines Sur, providing solutions to initiate, monitor, and progress transactions based on the client's established procedures.
                         </p>
                     </div>
 
@@ -341,11 +351,10 @@ function BTrNPMS() {
                             list-inside
                             pl-3
                         ">
-                            <li>Designed and implemented front-end interface using <span className="surface-surface">React</span>.</li>
-                            <li>Developed the back-end using <span className="surface-surface">ASP.NET Core</span>.</li>
-                            <li>Designed and implemented <span className="surface-surface">RESTful API Endpoints</span> for front-end to back-end communication.</li>
-                            <li>Utilized <span className="surface-surface">PostgreSQL</span> through <span className="surface-surface">Supabase</span> for data management.</li>
-                            <li>Integrated <span className="surface-surface">Steam Web API</span> to retrieve user account and game library data.</li>
+                            <li>Developed the user interface and system logic using <span className="surface-surface">PowerApps</span>.</li>
+                            <li>Developed the data management system through <span className="surface-surface">Dataverse</span>.</li>
+                            <li>Integrated <span className="surface-surface">SharePoint</span> for routing file uploads and ensuring data management longevity.</li>
+                            <li>Implemented handling of transaction types and requirements for different categories based on client's established procedures.</li>
                         </ul>
                     </div>
 
@@ -371,11 +380,9 @@ function BTrNPMS() {
                             list-inside
                             pl-3
                         ">
-                            <li><span className="surface-surface">Recently Played Games</span> summary presenting recent gameplay activity in the past two weeks in descending order based on total playtime.</li>
-                            <li><span className="surface-surface">Most Played Games</span> summary showing the top 10 games in descending order based on total playtime.</li>
-                            <li><span className="surface-surface">Personal Statistics</span> summary presenting general account analytics.</li>
-                            <li><span className="surface-surface">User Data Refresh</span> functionality for re-fetching data from Steam.</li>
-                            <li><span className="surface-surface">View Steam Profile</span> functionality for redirecting to the user's Steam profile.</li>
+                            <li><span className="surface-surface">Ongoing/Archived Transactions Interface</span> for monitoring ongoing or completed transactions.</li>
+                            <li><span className="surface-surface">Transaction Creation Process</span> for intializing new transactions and allowing for the setting of specific categories.</li>
+                            <li><span className="surface-surface">Transaction Step Management</span> for uploading, deleting, and replacing files within steps and including other necessary information based on the category.</li>
                         </ul>
                     </div>
                 </div>
