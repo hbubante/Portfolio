@@ -62,7 +62,7 @@ const scrollToSection = (id: string) => {
 // For redirecting functionality
 const GITHUB_URL = "https://github.com/hbubante";
 const LINKEDIN_URL = "https://www.linkedin.com/in/hbubante/";
-const RESUME_URL = "/Ubante_Resume.pdf";
+const RESUME_URL = `${import.meta.env.BASE_URL}Ubante_Resume.pdf`;
 
 const openExternal = (platform: string) => {
     window.open(platform, "_blank", "noopener,noreferrer");
